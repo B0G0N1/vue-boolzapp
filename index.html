@@ -10,18 +10,38 @@
 		<title>Boolzapp</title>
 	</head>
 	<body>
-		<div id="app">
+		<div id="app" class="min-vh-100 bg-light-grayish">
 			<!-- Header Verde -->
-			<header class="bg-teal"></header>
+			<header class="bg-teal w-100"></header>
 			<!-- Piattaforma WhatsApp -->
-			<div class="messaging-platform d-flex">
+			<div id="messaging-platform" class="d-flex">
 				<!-- Lista Contatti -->
-				<div class="chat-sidebar h-100">
-					<div class="list-header"></div>
+				<div id="chat-sidebar" class="h-100 w-35">
+					<div id="personal-info" class="d-flex justify-content-between w-100 h-10 p-1 bg-light-gray">
+						<div class="d-flex align-items-center">
+							<img src="./img/avatar_io.jpg" class="h-100 rounded-circle" alt="avatar_io">
+							<p class="fw-bold m-0 ms-1">Sofia</p>
+						</div>
+						<div class="d-flex align-items-center px-2 silver">
+							<i class="fa-solid fa-circle-notch fs-5"></i>
+							<i class="fa-solid fa-message fs-5 mx-2"></i>
+							<i class="fa-solid fa-ellipsis-vertical fs-5"></i>
+						</div>
+					</div>
+					<div id="notifications-toggle" class="d-flex align-items-center w-100 h-10 bg-light-sky-blue p-2">
+						<i class="fa-solid fa-bell-slash bg-white light-sky-blue p-2 rounded-circle fs-4"></i>
+						<div class="ms-2">
+							<p class="m-0">Ricevi notifiche di nuovi messaggi</p>
+							<a href="#" class="m-0">Attiva notifiche desktop</a>
+						</div>
+					</div>
+					<div id="chat-list" class="h-80 bg-white"></div>
 				</div>
 				<!-- Finestra Chat -->
-				<div class="chat-window h-100">
-					<div class="chat-header"></div>
+				<div id="chat-window" class="h-100 w-65">
+					<div id="chat-info" class="w-100 h-10 bg-light-gray"></div>
+					<div id="chat" class="w-100 h-80"></div>
+					<div id="message-input" class="w-100 h-10 bg-light-beige"></div>
 				</div>
 			</div>
 		</div>
