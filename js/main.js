@@ -1,5 +1,7 @@
 // Importa la funzione `createApp` da Vue
 const { createApp } = Vue;
+// Importo la funzione 'DateTime' da luxon
+const { DateTime } = luxon;
 
 // Crea una nuova applicazione Vue
 createApp({
@@ -160,22 +162,33 @@ createApp({
 				}
 			],
 			// Chat che è visibile
-			activeChat: 0,
-			// Messaggio attivo all'avvio
-			lastMessage: 0
+			activeChat: 0
 		};
 	},
 	methods: {
 		// Metodo per formattare data ore & minuti
-		formatDate(dateString) {
-			const date = new Date(dateString);
-			const hours = String(date.getHours()).padStart(2, '0');
-			const minutes = String(date.getMinutes()).padStart(2, '0');
-			return `${hours}:${minutes}`;
-		},
+        formatDate(dateString) {
+            const dt = DateTime.fromFormat(dateString, 'dd/MM/yyyy HH:mm:ss');
+            return dt.toFormat('HH:mm');
+        },
 		// Metodo per cambiare chat attiva
 		setActiveChat(index) {
 			this.activeChat = index;
-		}
+		},
+		// Metodo per aggiungere un messaggio
+        addMessage() {
+            if (this.newMessageText.trim() === '') return;
+
+            const now = DateTime.now().setLocale('it').toFormat('dd/MM/yyyy HH:mm:ss');
+
+            const newMessage = {
+                date: now,
+                message: this.newMessageText,
+                status: 'sent'
+            };
+
+            this.contacts[this.activeChat].messages.push(newMessage);
+            this.newMessageText = '';
+        }
 	}
 }).mount('#app');

@@ -91,13 +91,14 @@
 					<!-- Input di testo per la chat -->
 					<div id="message-input" class="d-flex align-items-center py-2 px-4 w-100 h-10 bg-light-beige">
 							<i class="fa-regular fa-face-smile fs-5"></i>
-							<input type="text" class="form-control mx-4" placeholder="Scrivi un messaggio">
+							<input type="text" class="form-control mx-4" placeholder="Scrivi un messaggio" v-model="newMessageText" @keypress.enter="addMessage">
 							<i class="fa-solid fa-microphone fs-5"></i>
 					</div>
 				</div>
 			</div>
 		</div>
 		<!-- Import Script -->
+		<script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
 		<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 		<script src="./js/main.js" type="text/javascript"></script>
 	</body>
