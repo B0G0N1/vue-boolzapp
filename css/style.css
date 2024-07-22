@@ -14,15 +14,15 @@ header {
 #messaging-platform {
     height: 600px;
     width: 1000px;
+    /* min e max ? */
     position: absolute;
     left: 50%;
     top: 30px;
     transform: translateX(-50%);
 }
 
-/* temp */
-#chat-sidebar {
-    background-color: pink;
+#personal-info {
+    border-right: 1px solid lightgray;
 }
 
 #chat {
@@ -31,6 +31,10 @@ header {
 
 .chat-item {
     border-top: 1px solid lightgray;
+}
+
+.chat-item:hover {
+background-color: rgba(128, 128, 128, 0.5);
 }
 
 /* UTILITY CLASS */
