@@ -1,0 +1,11 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* GENERIC CLASS */
+.custom-size {
+    height: 50px;
+}
