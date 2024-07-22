@@ -35,11 +35,42 @@
 							<a href="#" class="m-0">Attiva notifiche desktop</a>
 						</div>
 					</div>
-					<div id="chat-list" class="h-80 bg-white"></div>
+					<div id="chat-list" class="h-80 bg-white">
+						<!-- Barra di ricerca per le chat -->
+						<div class="input-group h-10 p-1">
+							<span class="input-group-text" id="chatName">
+								<i class="fa-solid fa-magnifying-glass"></i>
+							</span>
+							<input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
+						</div>
+						<!-- Chat recenti -->
+						<div class="overflow-auto h-90">
+							<div v-for="(contact, index) in contacts" :key="index" class="chat-item d-flex align-items-center h-20 p-2">
+								<img :src="contact.avatar" class="h-100 rounded-circle" :alt="contact.name">
+								<div class="ms-2">
+									<p class="fw-bold m-0">{{ contact.name }}</p>
+									<p class="m-0">Ultimo messaggio inviato</p>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 				<!-- Finestra Chat -->
 				<div id="chat-window" class="h-100 w-65">
-					<div id="chat-info" class="w-100 h-10 bg-light-gray"></div>
+					<div id="chat-info" class="d-flex justify-content-between w-100 h-10 p-1 bg-light-gray">
+						<div class="d-flex align-items-center">
+							<img :src="contacts[activeChat].avatar" class="h-100 rounded-circle" :alt="contacts[activeChat].name">
+							<div class="ms-1">
+								<p class="fw-bold m-0">{{ contacts[activeChat].name }}</p>
+								<p class="m-0">Ultimo accesso oggi alle 12:00</p>
+							</div>
+						</div>
+						<div class="d-flex align-items-center px-2 silver">
+							<i class="fa-solid fa-magnifying-glass fs-5"></i>
+							<i class="fa-solid fa-paperclip fs-5 mx-2"></i>
+							<i class="fa-solid fa-ellipsis-vertical fs-5"></i>
+						</div>
+					</div>
 					<div id="chat" class="w-100 h-80"></div>
 					<div id="message-input" class="w-100 h-10 bg-light-beige"></div>
 				</div>

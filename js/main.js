@@ -158,7 +158,11 @@ createApp({
 						}
 					],
 				}
-			]
+			],
+			// Chat che è visibile
+			activeChat: 0,
+			// Messaggio attivo all'avvio
+			lastMessage: 0
 		};
 	}
 }).mount('#app');
