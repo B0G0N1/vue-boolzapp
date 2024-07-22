@@ -10,14 +10,20 @@
 		<title>Boolzapp</title>
 	</head>
 	<body>
-		<!-- Test per vedere lista -->
 		<div id="app">
-			<ul>
-				<li v-for="contact in contacts" class="d-flex list-unstyled justify-center">
-					<img :src="contact.avatar" class="custom-size">
-					<h3>{{ contact.name }}</h3>
-				</li>
-			</ul>
+			<!-- Header Verde -->
+			<header class="bg-teal"></header>
+			<!-- Piattaforma WhatsApp -->
+			<div class="messaging-platform d-flex">
+				<!-- Lista Contatti -->
+				<div class="chat-sidebar h-100">
+					<div class="list-header"></div>
+				</div>
+				<!-- Finestra Chat -->
+				<div class="chat-window h-100">
+					<div class="chat-header"></div>
+				</div>
+			</div>
 		</div>
 		<!-- Import Script -->
 		<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>

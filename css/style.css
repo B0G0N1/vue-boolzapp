@@ -5,7 +5,43 @@
     box-sizing: border-box;
 }
 
+/* MAIN CLASS */
+header {
+    width: 100%;
+    height: 100px;
+}
+
+.messaging-platform {
+    height: 600px;
+    width: 1000px;
+    background-color: lightgray;
+    position: absolute;
+    left: 50%;
+    top: 30px;
+    transform: translateX(-50%);
+}
+
+.chat-sidebar {
+    width: 35%;
+    background-color: pink;
+}
+
+.chat-window {
+    width: 65%;
+    background-color: lightblue;
+}
+
 /* GENERIC CLASS */
 .custom-size {
     height: 50px;
 }
+
+/* COLOR CLASS */
+.bg-teal {
+    background-color: #009687;
+}
+
+/* DEBUG CLASS */
+/* * {
+    border: 1px dashed red;
+} */
