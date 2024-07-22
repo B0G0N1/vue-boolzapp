@@ -15,8 +15,9 @@
 			<header class="bg-teal w-100"></header>
 			<!-- Piattaforma WhatsApp -->
 			<div id="messaging-platform" class="d-flex">
-				<!-- Lista Contatti -->
+				<!-- Barra laterale -->
 				<div id="chat-sidebar" class="h-100 w-35">
+					<!-- Info personali -->
 					<div id="personal-info" class="d-flex justify-content-between w-100 h-10 p-1 bg-light-gray">
 						<div class="d-flex align-items-center">
 							<img src="./img/avatar_io.jpg" class="h-100 rounded-circle" alt="avatar_io">
@@ -28,6 +29,7 @@
 							<i class="fa-solid fa-ellipsis-vertical fs-5"></i>
 						</div>
 					</div>
+					<!-- Toggle Disattiva Notifiche -->
 					<div id="notifications-toggle" class="d-flex align-items-center w-100 h-10 bg-light-sky-blue p-2">
 						<i class="fa-solid fa-bell-slash bg-white light-sky-blue p-2 rounded-circle fs-4"></i>
 						<div class="ms-2">
@@ -45,18 +47,22 @@
 						</div>
 						<!-- Chat recenti -->
 						<div class="overflow-auto h-90">
-							<div v-for="(contact, index) in contacts" :key="index" class="chat-item d-flex align-items-center h-20 p-2">
-								<img :src="contact.avatar" class="h-100 rounded-circle" :alt="contact.name">
-								<div class="ms-2">
-									<p class="fw-bold m-0">{{ contact.name }}</p>
-									<p class="m-0">Ultimo messaggio inviato</p>
+							<div v-for="(contact, index) in contacts" :key="index" class="chat-item d-flex justify-content-between h-20 p-2">
+								<div class="d-flex align-items-center h-100">
+									<img :src="contact.avatar" class="h-100 rounded-circle" :alt="contact.name">
+									<div class="ms-2">
+										<p class="fw-bold m-0">{{ contact.name }}</p>
+										<p class="m-0">Ultimo messaggio inviato</p>
+									</div>
 								</div>
+								<p>12:00</p>
 							</div>
 						</div>
 					</div>
 				</div>
 				<!-- Finestra Chat -->
 				<div id="chat-window" class="h-100 w-65">
+					<!-- Info chat corrente -->
 					<div id="chat-info" class="d-flex justify-content-between w-100 h-10 p-1 bg-light-gray">
 						<div class="d-flex align-items-center">
 							<img :src="contacts[activeChat].avatar" class="h-100 rounded-circle" :alt="contacts[activeChat].name">
@@ -71,7 +77,11 @@
 							<i class="fa-solid fa-ellipsis-vertical fs-5"></i>
 						</div>
 					</div>
-					<div id="chat" class="w-100 h-80"></div>
+					<!-- Messaggi chat -->
+					<div id="chat" class="w-100 h-80 overflow-auto position-relative">
+						<div class="message bg-white p-2 position-absolute rounded">Hai portato a spasso il cane ?</div>
+					</div>
+					<!-- Input di testo per la chat -->
 					<div id="message-input" class="w-100 h-10 bg-light-beige"></div>
 				</div>
 			</div>

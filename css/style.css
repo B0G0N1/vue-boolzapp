@@ -33,6 +33,10 @@ header {
     border-top: 1px solid lightgray;
 }
 
+.message {
+    right: 20px;
+    top: 20px;
+}
 
 /* UTILITY CLASS */
 .w-35 {
