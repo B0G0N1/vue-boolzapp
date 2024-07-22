@@ -33,11 +33,6 @@ header {
     border-top: 1px solid lightgray;
 }
 
-.message {
-    right: 20px;
-    top: 20px;
-}
-
 /* UTILITY CLASS */
 .w-35 {
     width: 35%;
@@ -95,6 +90,22 @@ header {
 
 .light-sky-blue {
     color: #8cd7fa;
+}
+
+.sent {
+    background-color: #d2f5b9;
+    right: 20px;
+}
+
+.received {
+    background-color: #ffffff;
+    left: 20px;
+}
+
+.message-time {
+    font-size: 0.8rem;
+    bottom: 2px;
+    right: 5px;
 }
 
 

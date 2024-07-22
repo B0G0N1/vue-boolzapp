@@ -30,7 +30,7 @@
 						</div>
 					</div>
 					<!-- Toggle Disattiva Notifiche -->
-					<div id="notifications-toggle" class="d-flex align-items-center w-100 h-10 bg-light-sky-blue p-2">
+					<div id="notifications-toggle" class="d-flex align-items-center w-100 h-10 bg-light-sky-blue p-3">
 						<i class="fa-solid fa-bell-slash bg-white light-sky-blue p-2 rounded-circle fs-4"></i>
 						<div class="ms-2">
 							<p class="m-0">Ricevi notifiche di nuovi messaggi</p>
@@ -79,7 +79,13 @@
 					</div>
 					<!-- Messaggi chat -->
 					<div id="chat" class="w-100 h-80 overflow-auto position-relative">
-						<div class="message bg-white p-2 position-absolute rounded">Hai portato a spasso il cane ?</div>
+						<div v-for="(message, index) in contacts[0].messages" 
+							:key="index" 
+							:class="['position-absolute', 'rounded', 'p-2', message.status === 'sent' ? 'sent' : 'received']" 
+							:style="{ top: `${20 + index * 50}px` }">
+							<p class="m-0 me-5">{{ message.message }}</p>
+							<div class="message-time position-absolute">12:00</div>
+						</div>
 					</div>
 					<!-- Input di testo per la chat -->
 					<div id="message-input" class="w-100 h-10 bg-light-beige"></div>
