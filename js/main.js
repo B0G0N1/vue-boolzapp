@@ -161,8 +161,10 @@ createApp({
 					],
 				}
 			],
-			// Chat che è visibile
-			activeChat: 0
+			// Definisco chat che è visibile
+			activeChat: 0,
+			// Inizializzo stringa vuota per messaggio di invio
+			nnewMessageText: ''
 		};
 	},
 	methods: {
@@ -189,6 +191,23 @@ createApp({
 
             this.contacts[this.activeChat].messages.push(newMessage);
             this.newMessageText = '';
-        }
+
+			// Chiamata al metodo answer per ricevere "ok"
+			this.answer();
+        },
+		// Metodo per ricevere risposta "ok"
+		answer() {
+			setTimeout(() => {
+				const now = DateTime.now().setLocale('it').toFormat('dd/MM/yyyy HH:mm:ss');
+		
+				const newMessage = {
+					date: now,
+					message: 'ok',
+					status: 'received'
+				};
+		
+				this.contacts[this.activeChat].messages.push(newMessage);
+			}, 1000);
+		}		
 	}
 }).mount('#app');
