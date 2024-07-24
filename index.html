@@ -84,6 +84,7 @@
 							:class="['position-absolute', 'rounded', 'p-2', message.status === 'sent' ? 'sent' : 'received']" 
 							:style="{ top: `${20 + index * 60}px` }">
 							<p class="m-0 me-5">{{ message.message }}</p>
+							<i class="fa-solid fa-chevron-down message-arrow position-absolute silver" @click="messageOptions"></i>
 							<div class="message-time position-absolute">{{ formatDate(message.date) }}</div>
 						</div>
 					</div>

@@ -42,6 +42,33 @@ background-color: rgba(128, 128, 128, 0.5);
     padding: 12px 10px;
 }
 
+.sent {
+    background-color: #d2f5b9;
+    right: 20px;
+}
+
+.received {
+    background-color: #ffffff;
+    left: 20px;
+}
+
+.message-time {
+    font-size: 0.8rem;
+    bottom: 2px;
+    right: 5px;
+}
+
+.message-arrow {
+    top: 1px;
+    right: 4px;
+}
+
+.message-options {
+    top: 20px;
+    right: 5px;
+    font-size: 0.8rem;
+}
+
 /* UTILITY CLASS */
 .w-35 {
     width: 35%;
@@ -103,22 +130,6 @@ background-color: rgba(128, 128, 128, 0.5);
 
 .light-sky-blue {
     color: #8cd7fa;
-}
-
-.sent {
-    background-color: #d2f5b9;
-    right: 20px;
-}
-
-.received {
-    background-color: #ffffff;
-    left: 20px;
-}
-
-.message-time {
-    font-size: 0.8rem;
-    bottom: 2px;
-    right: 5px;
 }
 
 

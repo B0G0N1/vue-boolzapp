@@ -217,6 +217,23 @@ createApp({
 			this.contacts.forEach(contact => {
 				contact.visible = contact.name.toLowerCase().includes(searchLower);
 			});
-		}		
+		},
+		messageOptions(event) {
+			const iconElement = event.target;
+			const parentElement = iconElement.parentElement;
+			const existingOptions = parentElement.querySelector('.message-options');
+	
+			if (existingOptions) {
+				existingOptions.remove();
+			} else {
+				const optionsDiv = document.createElement('div');
+				optionsDiv.className = 'message-options position-absolute z-1 bg-white shadow rounded-sm p-3';
+				optionsDiv.innerHTML = `
+					<p class="m-0 mb-3">Message info</p>
+					<p class="m-0" @click="deleteMessage">Delete Message</p>
+				`;
+				parentElement.appendChild(optionsDiv);
+			}
+		}
 	}
 }).mount('#app');
