@@ -164,7 +164,9 @@ createApp({
 			// Definisco chat che è visibile
 			activeChat: 0,
 			// Inizializzo stringa vuota per messaggio di invio
-			nnewMessageText: ''
+			newMessageText: '',
+			// Inizializzo una stringa vuota per stringa filtro chat
+			searchTerm: ''
 		};
 	},
 	methods: {
@@ -208,6 +210,13 @@ createApp({
 		
 				this.contacts[this.activeChat].messages.push(newMessage);
 			}, 1000);
+		},
+		// Metodo per filtrare chat contatti
+		filterChat() {
+			const searchLower = this.searchFilter.toLowerCase();
+			this.contacts.forEach(contact => {
+				contact.visible = contact.name.toLowerCase().includes(searchLower);
+			});
 		}		
 	}
 }).mount('#app');
